@@ -1,0 +1,267 @@
+#include <NewPing.h>
+#include <Servo.h>
+NewPing mySonar(A1, A2,200);
+int dis;
+
+Servo rightfoot;
+Servo leftfoot;
+Servo rightthigh;
+Servo leftthigh;
+void setup() {
+  // put your setup code here, to run once:
+rightfoot.attach(5);
+leftfoot.attach(13);
+ rightthigh.attach(7);
+ leftthigh.attach(11);
+rightfoot.write(90);
+leftfoot.write(90);
+rightthigh.write(90);
+leftthigh.write(90);
+Serial.begin(9600);
+}
+void loop() {
+  // put your main code here, to run repeatedly
+
+dis = mySonar.ping_cm();
+Serial.println(dis);
+if(dis<10){
+  
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(500);
+//splits
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(5);
+leftfoot.write(180);
+delay(500);
+//
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(300);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(180);
+leftfoot.write(90);
+delay(300);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(180);
+leftfoot.write(10);
+delay(500);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(500);
+  rightthigh.write(180);
+leftthigh.write(180);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(250);
+  rightthigh.write(0);
+leftthigh.write(0);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(1500);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(500);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(180);
+leftfoot.write(90);
+delay(250);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(180);
+leftfoot.write(10);
+delay(250);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(250);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(0);
+leftfoot.write(90);
+delay(500);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(0);
+leftfoot.write(180);
+delay(500);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(500);
+ for(int i=0; i<180;i+=2){
+  rightthigh.write(i);
+  leftthigh.write(i);
+delay(10);
+  }
+  delay(10);
+ for(int x=180; x>90;x-=2){
+  rightthigh.write(x);
+  leftthigh.write(x);
+delay(10);
+  }
+   
+delay(100);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(500);
+  rightthigh.write(180);
+leftthigh.write(180);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(500);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(500);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(0);
+leftfoot.write(90);
+delay(500);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(0);
+leftfoot.write(180);
+delay(500);
+  rightthigh.write(0);
+leftthigh.write(90);
+rightfoot.write(0);
+leftfoot.write(180);
+delay(500);
+  rightthigh.write(0);
+leftthigh.write(0);
+rightfoot.write(0);
+leftfoot.write(180);
+delay(500);
+  rightthigh.write(180);
+leftthigh.write(180);
+rightfoot.write(0);
+leftfoot.write(180);
+delay(500);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(400);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(180);
+leftfoot.write(180);
+delay(400);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(0);
+leftfoot.write(0);
+delay(400);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(180);
+leftfoot.write(180);
+delay(750);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(0);
+leftfoot.write(0);
+delay(400);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(180);
+leftfoot.write(180);
+delay(400);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(750);
+ for(int i=0; i<180;i+=2){
+  rightfoot.write(i);
+  leftfoot.write(i);
+delay(10);
+  }
+  delay(10);
+ 
+ for(int x=180; x>0;x-=2){
+  rightfoot.write(x);
+  leftfoot.write(x);
+delay(10);
+  }
+  
+   rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(500);
+  rightthigh.write(45);
+leftthigh.write(45);
+rightfoot.write(45);
+leftfoot.write(135);
+delay(500);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(500);
+  rightthigh.write(135);
+leftthigh.write(135);
+rightfoot.write(135);
+leftfoot.write(45);
+delay(500);
+  rightthigh.write(90);
+leftthigh.write(90);
+rightfoot.write(90);
+leftfoot.write(90);
+delay(500);
+  rightthigh.write(135);
+leftthigh.write(90);
+rightfoot.write(150);
+leftfoot.write(90);
+delay(250);
+  rightthigh.write(90);
+leftthigh.write(135);
+rightfoot.write(90);
+leftfoot.write(20);
+delay(250);
+  rightthigh.write(135);
+leftthigh.write(90);
+rightfoot.write(150);
+leftfoot.write(90);
+delay(500);
+  rightthigh.write(90);
+leftthigh.write(135);
+rightfoot.write(90);
+leftfoot.write(150);
+delay(250);
+
+rightthigh.write(135);
+leftthigh.write(90);
+rightfoot.write(20);
+leftfoot.write(90);
+delay(250);
+
+rightthigh.write(90);
+leftthigh.write(135);
+rightfoot.write(90);
+leftfoot.write(150);
+delay(250);
+}
+
+}
+
